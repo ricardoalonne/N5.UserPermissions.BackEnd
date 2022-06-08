@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessModel\N5.UserPermissions.DataTransferObject\N5.UserPermissions.DataTransferObject.csproj" />
+    <ProjectReference Include="..\..\Common\N5.UserPermissions.Common\N5.UserPermissions.Common.csproj" />
+    <ProjectReference Include="..\N5.UserPermissions.UnitOfWork\N5.UserPermissions.UnitOfWork.csproj" />
+  </ItemGroup>
+
+</Project>

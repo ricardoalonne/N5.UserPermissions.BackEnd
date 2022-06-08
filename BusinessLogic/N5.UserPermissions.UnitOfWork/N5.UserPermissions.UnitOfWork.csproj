@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N5.UserPermissions.Context\N5.UserPermissions.Context.csproj" />
+    <ProjectReference Include="..\N5.UserPermissions.Repository\N5.UserPermissions.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
