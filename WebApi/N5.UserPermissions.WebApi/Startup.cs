@@ -47,13 +47,20 @@ namespace N5.UserPermissions.WebApi
             services.AddTransient<IUnitOfWork, UnitOfWork.Implementation.UnitOfWork>();
             services.AddTransient<IPermissionService, PermissionService>();
             services.AddTransient<IPermissionTypeService, PermissionTypeService>();
+
+            services.AddCors(options =>
+            {
+                var webAppReactUrl = Configuration.GetValue<string>("ExternalUrl:WebAppReactUrl");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(webAppReactUrl).AllowAnyMethod().AllowAnyHeader();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("CorsPolicy");
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -64,6 +71,8 @@ namespace N5.UserPermissions.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
