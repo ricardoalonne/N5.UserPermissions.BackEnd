@@ -1,9 +1,10 @@
 ﻿using N5.UserPermissions.Common.Model;
+using N5.UserPermissions.Entity.Base;
 
 namespace N5.UserPermissions.Entity
 {
-    public class PermissionType : BusinessModelBase
+    public class PermissionType : PermissionTypeBase
     {
-        public string Description { get; set; }
+        
     }
 }

@@ -43,7 +43,7 @@ namespace N5.UserPermissions.DataTransferObject.Request
             this.Id = entity.Id;
             this.EmployeeName = entity.EmployeeName;
             this.EmployeeLastName = entity.EmployeeLastName;
-            this.PermissionTypeId = entity.PermissionType.Id;
+            this.PermissionTypeId = entity.PermissionTypeId;
             this.PermitDate = entity.PermitDate;
             this.IsActive = entity.IsActive;
         }
@@ -55,7 +55,7 @@ namespace N5.UserPermissions.DataTransferObject.Request
                 Id = this.Id,
                 EmployeeName = this.EmployeeName,
                 EmployeeLastName = this.EmployeeLastName,
-                PermissionType = new PermissionType() { Id = this.PermissionTypeId },
+                PermissionTypeId = this.PermissionTypeId,
                 PermitDate = this.PermitDate,
                 IsActive = this.IsActive,
             };

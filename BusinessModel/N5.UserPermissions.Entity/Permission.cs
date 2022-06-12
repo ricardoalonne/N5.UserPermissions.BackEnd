@@ -1,16 +1,11 @@
 ﻿using N5.UserPermissions.Common.Model;
+using N5.UserPermissions.Entity.Base;
 using System;
 
 namespace N5.UserPermissions.Entity
 {
-    public class Permission : BusinessModelBase
+    public class Permission : PermissionBase
     {
-        public string EmployeeName { get; set; }
-
-        public string EmployeeLastName { get; set; }
-
         public PermissionType PermissionType { get; set; }
-
-        public DateTime PermitDate { get; set; } = DateTime.UtcNow;
     }
 }
