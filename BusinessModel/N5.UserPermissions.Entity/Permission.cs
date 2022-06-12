@@ -1,6 +1,4 @@
-﻿using N5.UserPermissions.Common.Model;
-using N5.UserPermissions.Entity.Base;
-using System;
+﻿using N5.UserPermissions.Entity.Base;
 
 namespace N5.UserPermissions.Entity
 {

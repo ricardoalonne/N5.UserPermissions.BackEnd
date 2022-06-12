@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using N5.UserPermissions.DataTransferObject.Request;
@@ -13,6 +8,9 @@ using N5.UserPermissions.Service.Interface;
 using N5.UserPermissions.Test.Controllers.Base;
 using N5.UserPermissions.UnitOfWork.Interface;
 using N5.UserPermissions.WebApi.Controllers;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace N5.UserPermissions.Test.Controllers
 {
@@ -138,7 +136,8 @@ namespace N5.UserPermissions.Test.Controllers
         {
             //Data preparation
             var context = BuildContext(_connectionString);
-            var newPermission = new Entity.Permission() {
+            var newPermission = new Entity.Permission()
+            {
                 EmployeeName = "Luis",
                 EmployeeLastName = "Martinez",
                 PermissionType = new Entity.PermissionType() { Description = "Type 2", IsActive = true },

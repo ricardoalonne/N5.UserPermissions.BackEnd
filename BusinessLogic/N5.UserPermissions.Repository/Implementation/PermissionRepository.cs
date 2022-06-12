@@ -24,7 +24,7 @@ namespace N5.UserPermissions.Repository.Implementation
         public async Task<Permission> Get(int id)
         {
             var permission = await _context.Permissions.Include(permission => permission.PermissionType).FirstOrDefaultAsync(permission => permission.Id == id);
-            if(permission != null) permission.PermissionType = await _context.PermissionTypes.FindAsync(permission.PermissionType.Id);
+            if (permission != null) permission.PermissionType = await _context.PermissionTypes.FindAsync(permission.PermissionType.Id);
             return permission;
         }
 

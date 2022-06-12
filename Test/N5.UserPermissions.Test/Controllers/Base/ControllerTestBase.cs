@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using N5.UserPermissions.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace N5.UserPermissions.Test.Controllers.Base
 {
