@@ -23,7 +23,7 @@ namespace N5.UserPermissions.Test.Models.DataTransferObject.Request
                 Id = 1,
                 EmployeeName = "Luis",
                 EmployeeLastName = "Martinez",
-                PermissionType = new Entity.PermissionType() { Id = 1, Description = "Type 2", IsActive = true },
+                PermissionTypeId = 1,
                 PermitDate = _dateTimeNow,
                 IsActive = true,
             };
@@ -64,7 +64,7 @@ namespace N5.UserPermissions.Test.Models.DataTransferObject.Request
                 Id = 1,
                 EmployeeName = "Luis",
                 EmployeeLastName = "Martinez",
-                PermissionType = new Entity.PermissionType() { Id = 1 },
+                PermissionTypeId = 1,
                 PermitDate = _dateTimeNow,
                 IsActive = true,
             };
