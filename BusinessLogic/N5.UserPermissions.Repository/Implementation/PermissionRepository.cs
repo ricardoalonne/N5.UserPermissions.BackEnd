@@ -52,7 +52,7 @@ namespace N5.UserPermissions.Repository.Implementation
             var permissionUpdate = await _context.Permissions.FindAsync(permission.Id);
             permissionUpdate.EmployeeName = permission.EmployeeName;
             permissionUpdate.EmployeeLastName = permission.EmployeeLastName;
-            permissionUpdate.PermissionType = permission.PermissionType;
+            permissionUpdate.PermissionTypeId = permission.PermissionTypeId;
             permissionUpdate.PermitDate = permission.PermitDate;
             permissionUpdate.IsActive = true;
 

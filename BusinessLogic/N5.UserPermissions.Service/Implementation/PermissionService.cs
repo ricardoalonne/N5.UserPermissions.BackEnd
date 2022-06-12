@@ -22,7 +22,11 @@ namespace N5.UserPermissions.Service.Implementation
             using (var connection = _unitOfWork.Create())
             {
                 var permissionsEntity = await connection.Repository.IPermissionRepository.GetAll();
-                var permissions = permissionsEntity.Select(permission => new PermissionResponseDTO(permission)).ToList();
+                var types = await connection.Repository.IPermissionTypeRepository.GetAll();
+                var permissions = permissionsEntity.Select(permission => new PermissionResponseDTO(permission)
+                {
+                    PermissionType = new PermissionTypeResponseDTO(types.FirstOrDefault(type => type.Id == permission.PermissionTypeId))
+                }).ToList();
                 return permissions;
             }
         }
@@ -32,7 +36,11 @@ namespace N5.UserPermissions.Service.Implementation
             using (var connection = _unitOfWork.Create())
             {
                 var permissionsEntity = await connection.Repository.IPermissionRepository.Get();
-                var permissions = permissionsEntity.Select(permission => new PermissionResponseDTO(permission)).ToList();
+                var types = await connection.Repository.IPermissionTypeRepository.GetAll();
+                var permissions = permissionsEntity.Select(permission => new PermissionResponseDTO(permission)
+                {
+                    PermissionType = new PermissionTypeResponseDTO(types.FirstOrDefault(type => type.Id == permission.PermissionTypeId))
+                }).ToList();
                 return permissions;
             }
         }
@@ -42,7 +50,10 @@ namespace N5.UserPermissions.Service.Implementation
             using (var connection = _unitOfWork.Create())
             {
                 var permissionEntity = await connection.Repository.IPermissionRepository.Get(id);
-                return new PermissionResponseDTO(permissionEntity);
+                return new PermissionResponseDTO(permissionEntity)
+                {
+                    PermissionType = new PermissionTypeResponseDTO(await connection.Repository.IPermissionTypeRepository.Get(permissionEntity.PermissionTypeId))
+                };
             }
         }
 
